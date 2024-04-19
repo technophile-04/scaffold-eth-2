@@ -20,8 +20,8 @@ To get started with Scaffold-ETH 2, follow the steps below:
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git
-cd scaffold-eth-2
+git clone -b coinbase-wallet-sdk https://github.com/technophile-04/scaffold-eth-2.git coinbase-wallet-demo
+cd coinbase-wallet-demo
 yarn install
 ```
 
@@ -57,12 +57,12 @@ Visit your app on: `http://localhost:3000`. You can interact with your smart con
 - Edit your smart contract test in: `packages/hardhat/test`. To run test use `yarn hardhat:test`
 
 ## Showing coinbase smart wallet : 
-When on local chain, Scaffold-ETH's burner wallet is shown instead of coinabse smart wallet. Since [coinbase beta sdk connector](https://github.com/coinbase/coinbase-wallet-sdk/blob/master/packages/wallet-sdk/docs/v4_with_wagmi.md) only works with base sepolia, it won't be shown on connect modal when `scaffold.config.ts` [targetNetworks](https://github.com/scaffold-eth/scaffold-eth-2/blob/10c13e58f8af3276115da907b4650fe3efe2d873/packages/nextjs/scaffold.config.ts#L13) doens't have `chains.baseSepolia` in it. 
-
 
 Once you change `scaffold.config.ts` [targetNetworks](https://github.com/scaffold-eth/scaffold-eth-2/blob/10c13e58f8af3276115da907b4650fe3efe2d873/packages/nextjs/scaffold.config.ts#L13) with `targetNetworks: [chains.baseSepolia]` it will automatically be shown. 
 
-For interacting with contracts, you nicely use [scaffold-eth custom hooks](https://docs.scaffoldeth.io/hooks/) (wrappers around wagmi) or wagmi hooks directly without needing to change anything. 
+When on local chain, Scaffold-ETH's burner wallet is shown instead of coinabse smart wallet. Since [coinbase beta sdk connector](https://github.com/coinbase/coinbase-wallet-sdk/blob/master/packages/wallet-sdk/docs/v4_with_wagmi.md) only works with base sepolia, it won't be shown on connect modal when `scaffold.config.ts` [targetNetworks](https://github.com/scaffold-eth/scaffold-eth-2/blob/10c13e58f8af3276115da907b4650fe3efe2d873/packages/nextjs/scaffold.config.ts#L13) doens't have `chains.baseSepolia` in it. 
+
+For interacting with contracts, you can nicely use [scaffold-eth custom hooks](https://docs.scaffoldeth.io/hooks/) (wrappers around wagmi) or wagmi hooks directly without needing to change anything. 
 
 ## Documentation
 
