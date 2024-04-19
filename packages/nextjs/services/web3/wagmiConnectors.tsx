@@ -7,7 +7,11 @@ import scaffoldConfig from "~~/scaffold.config";
 const { onlyLocalBurnerWallet, targetNetworks } = scaffoldConfig;
 
 const wallets = [
-  coinbaseSdkWallet,
+  // Olnly show coinbase sdk wallet if the target network is baseSepolia
+  ...(!targetNetworks.some(network => network.id !== (chains.baseSepolia as chains.Chain).id) || !onlyLocalBurnerWallet
+    ? [coinbaseSdkWallet]
+    : []),
+  // Only show burner wallet if the target network is hardhat and onlyLocalBurnerWallet is false
   ...(!targetNetworks.some(network => network.id !== (chains.hardhat as chains.Chain).id) || !onlyLocalBurnerWallet
     ? [burnerWalletConfig]
     : []),
