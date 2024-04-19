@@ -1,21 +1,9 @@
-# 🏗 Scaffold-ETH 2
+# 🏗 Coinbase Smart-Wallet SDK starter kit
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+~ Fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2)
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+A fork of Scaffold-ETH 2 with [coinbase-sdk-wallet beta](https://github.com/coinbase/coinbase-wallet-sdk/) preconfigured which allows 4337 account abstraction using passkeys.
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
-
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
 
 ## Requirements
 
@@ -67,6 +55,14 @@ Visit your app on: `http://localhost:3000`. You can interact with your smart con
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/hardhat/deploy`
 - Edit your smart contract test in: `packages/hardhat/test`. To run test use `yarn hardhat:test`
+
+## Showing coinbase smart wallet : 
+When on local chain, Scaffold-ETH's burner wallet is shown instead of coinabse smart wallet. Since [coinbase beta sdk connector](https://github.com/coinbase/coinbase-wallet-sdk/blob/master/packages/wallet-sdk/docs/v4_with_wagmi.md) only works with base sepolia, it won't be shown on connect modal when `scaffold.config.ts` [targetNetworks](https://github.com/scaffold-eth/scaffold-eth-2/blob/10c13e58f8af3276115da907b4650fe3efe2d873/packages/nextjs/scaffold.config.ts#L13) doens't have `chains.baseSepolia` in it. 
+
+
+Once you change `scaffold.config.ts` [targetNetworks](https://github.com/scaffold-eth/scaffold-eth-2/blob/10c13e58f8af3276115da907b4650fe3efe2d873/packages/nextjs/scaffold.config.ts#L13) with `targetNetworks: [chains.baseSepolia]` it will automatically be shown. 
+
+For interacting with contracts, you nicely use [scaffold-eth custom hooks](https://docs.scaffoldeth.io/hooks/) (wrappers around wagmi) or wagmi hooks directly without needing to change anything. 
 
 ## Documentation
 
