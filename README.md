@@ -1,8 +1,8 @@
 # 🏗 Coinbase Smart-Wallet SDK starter kit
 
-~ Fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2)
+Demo: https://se2-coinbase-smart-wallet.vercel.app/
 
-A fork of Scaffold-ETH 2 with [coinbase-sdk-wallet beta](https://github.com/coinbase/coinbase-wallet-sdk/) preconfigured which allows 4337 account abstraction using passkeys.
+A fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) with [coinbase-sdk-wallet beta](https://github.com/coinbase/coinbase-wallet-sdk/) preconfigured which allows 4337 account abstraction using passkeys.
 
 
 ## Requirements
