@@ -19,6 +19,8 @@ const deployerPrivateKey =
 // If not set, it uses ours Etherscan default API key.
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
+const baseScanApiKey = process.env.BASESCAN_API_KEY || "KYZBH7APZKUETUKVRQF3MIIWYZXZVVZF4K";
+
 const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.17",
@@ -44,6 +46,26 @@ const config: HardhatUserConfig = {
       forking: {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
+      },
+    },
+    baseSepolia: {
+      url: "https://sepolia.base.org",
+      accounts: [deployerPrivateKey],
+      verify: {
+        etherscan: {
+          apiUrl: "https://api-sepolia.basescan.org",
+          apiKey: baseScanApiKey,
+        },
+      },
+    },
+    base: {
+      url: "https://mainnet.base.org",
+      accounts: [deployerPrivateKey],
+      verify: {
+        etherscan: {
+          apiUrl: "https://api.basescan.org",
+          apiKey: baseScanApiKey,
+        },
       },
     },
     mainnet: {
@@ -92,14 +114,6 @@ const config: HardhatUserConfig = {
     },
     chiado: {
       url: "https://rpc.chiadochain.net",
-      accounts: [deployerPrivateKey],
-    },
-    base: {
-      url: "https://mainnet.base.org",
-      accounts: [deployerPrivateKey],
-    },
-    baseSepolia: {
-      url: "https://sepolia.base.org",
       accounts: [deployerPrivateKey],
     },
     scrollSepolia: {
