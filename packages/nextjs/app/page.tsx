@@ -48,6 +48,7 @@ const Home: NextPage = () => {
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
           </div>
+          {/* Contract interaction card */}
           <div className="card w-96 bg-base-100 shadow-md">
             <div className="card-body space-y-4 p-6">
               <h2 className="card-title m-0">Interact using your Smart Wallet!</h2>
