@@ -2260,7 +2260,7 @@ __metadata:
     abitype: ^1.0.2
     autoprefixer: ^10.4.12
     blo: ^1.0.1
-    burner-connector-test01: ^1.0.0
+    burner-connector-test01: ^1.0.1
     daisyui: 4.5.0
     eslint: ^8.15.0
     eslint-config-next: ^14.0.4
@@ -4900,13 +4900,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"burner-connector-test01@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "burner-connector-test01@npm:1.0.0"
+"burner-connector-test01@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "burner-connector-test01@npm:1.0.1"
   dependencies:
     "@wagmi/core": 2.6.9
     viem: 2.8.16
-  checksum: 647cb5059f72d5bc62e9ea290c5efa9ee2c4f678a7dad2693f5d44c4c6c5df278832f83cdf6548a26c4479c851154f54bb38f883c6b5eb0a69e1c9b6ae9fbeea
+  checksum: 84b9234e8517bbb23df31b62667b66485bff9829ddb1c6d4a596bb304072c3526a71934b3651f31694ddb938bdb61905722f50a710545de7e463fb96208a8331
   languageName: node
   linkType: hard
 
