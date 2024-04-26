@@ -38,7 +38,7 @@ export class ChainNotConfiguredError extends BaseError {
 
 type Provider = ReturnType<Transport<"custom", Record<any, any>, EIP1193RequestFn<WalletRpcSchema>>>;
 
-export const createBurnerConnector = (walletDetails: WalletDetailsParams) => {
+export const burner = () => {
   let connected = true;
   let connectedChainId: number;
   return createConnector<Provider>(config => ({
@@ -148,6 +148,12 @@ export const createBurnerConnector = (walletDetails: WalletDetailsParams) => {
       connected = false;
       return Promise.resolve();
     },
+  }));
+};
+
+export const createBurnerConnector = (walletDetails: WalletDetailsParams) => {
+  return createConnector<Provider>(config => ({
+    ...burner()(config),
     ...walletDetails,
   }));
 };
